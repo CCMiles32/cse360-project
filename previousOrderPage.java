@@ -2,13 +2,13 @@
 
 //package GUI;
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.*;
-import javax.swing.JFrame;
+
 import javax.swing.*;
-import javax.swing.JFrame;
 
 
 
@@ -22,48 +22,60 @@ public class previousOrderPage extends orderProcessingPage implements ActionList
     JLabel orderItself = new JLabel();
     JLabel orderDate = new JLabel();
     JLabel orderStatus = new JLabel();
-
-    previousOrderPage(){
+    JLabel asuImage7 = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("asu.png")).getImage().getScaledInstance(175, 75, Image.SCALE_DEFAULT)));
+    JLabel menuTitel = new JLabel("SunDevil Pizza", JLabel.LEFT);
+    
+    previousOrderPage(String day, String month, String year){
         orderProcessingPage.dispose();
         this.dispose();
 
-        orderName.setText("Name:");
-        orderName.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 30));
-        orderName.setForeground(Color.WHITE);
-        orderName.setBounds(50, 10, 100, 30);
+        orderName.setText("Name:   Adrian Mena");
+        orderName.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
+        orderName.setBackground(Color.WHITE);
+        orderName.setOpaque(true);
+        orderName.setBorder(blackBrdr);
+        orderName.setBounds(100, 190, 500, 30);
 
-        orderID.setText("ID:");
-        orderID.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 30));
-        orderID.setForeground(Color.WHITE);
-        orderID.setBounds(400, 10, 100, 30);
+        orderID.setText("ID:        1218736758");
+        orderID.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
+        orderID.setBackground(Color.WHITE);
+        orderID.setOpaque(true);
+        orderID.setBorder(blackBrdr);
+        orderID.setBounds(100, 160, 500, 30);
 
-        orderItself.setText("Order:");
-        orderItself.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 30));
-        orderItself.setForeground(Color.WHITE);
-        orderItself.setBounds(300, 100, 100, 50);
+        orderItself.setText("Order:   Cheese with Mushrooms");
+        orderItself.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
+        orderItself.setBackground(Color.WHITE);
+        orderItself.setOpaque(true);
+        orderItself.setBorder(blackBrdr);
+        orderItself.setBounds(100, 220, 500, 30);
 
-        orderDate.setText("Date:");
-        orderDate.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 30));
-        orderDate.setForeground(Color.WHITE);
-        orderDate.setBounds(50, 200, 100, 30);
+        orderDate.setText("Date:     " + month + " " + day + ", " + year);
+        orderDate.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
+        orderDate.setBackground(Color.WHITE);
+        orderDate.setOpaque(true);
+        orderDate.setBorder(blackBrdr);
+        orderDate.setBounds(100, 130, 500, 30);
 
-        orderStatus.setText("Status:");
-        orderStatus.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 30));
-        orderStatus.setForeground(Color.WHITE);
-        orderStatus.setBounds(300, 280, 100, 50);
+        orderStatus.setText("Status:   COMPLETED");
+        orderStatus.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
+        //orderStatus.setBackground(SunDevilMaroon);
+        orderStatus.setForeground(Color.RED);
+        orderStatus.setBackground(SunDevilBlack);
+        orderStatus.setOpaque(true);
+        orderStatus.setBorder(blackBrdr);
+        //orderStatus.setOpaque(true);
+        //orderStatus.setBorder(blackBrdr);
+        orderStatus.setBounds(100, 100, 500, 30);
 
-        previousOrderPage.add(orderDate);
-        //
-        previousOrderPage.add(orderStatus);
-        //
-        previousOrderPage.add(orderID);
-        //
-        previousOrderPage.add(orderItself);
-
-        previousOrderPage.add(orderName);
-        //
+        asuImage7.setBounds(0,0,200,50);
+        asuImage7.setBackground(Color.WHITE);
+        asuImage7.setOpaque(true);
         
-
+        menuTitle.setBounds(200,0,500,50);
+        menuTitle.setBackground(Color.WHITE);
+        menuTitle.setOpaque(true);
+        
         previousOrderPage.setVisible(true); //makes frame visible
         previousOrderPage.setTitle("Previous Order"); //sets title
         previousOrderPage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //sets exit to close app
@@ -71,8 +83,16 @@ public class previousOrderPage extends orderProcessingPage implements ActionList
         previousOrderPage.setSize(700,400); //setse starting dimentions
         previousOrderPage.setLocationRelativeTo(null); //When opened, opens in center of screen
         //previousOrderPage.setLayout(new java.awt.FlowLayout());
-        previousOrderPage.getContentPane().setBackground(SunDevilBlack);
+        previousOrderPage.getContentPane().setBackground(SunDevilGold);
         previousOrderPage.getContentPane().setLayout(null);
+        
+        previousOrderPage.add(asuImage7);
+        previousOrderPage.add(menuTitle);
+        previousOrderPage.add(orderDate);
+        previousOrderPage.add(orderStatus);
+        previousOrderPage.add(orderID);
+        previousOrderPage.add(orderItself);
+        previousOrderPage.add(orderName);
     }
 
 
