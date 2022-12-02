@@ -13,7 +13,7 @@ public class waitTimePage extends cartPage implements ActionListener{
     JLabel titleLabel = new JLabel("Wait Time Page");
     JLabel statusLabel = new JLabel("Status: PENDING", JLabel.LEFT);
     JLabel asuImage3 = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("asu.png")).getImage().getScaledInstance(175, 75, Image.SCALE_DEFAULT)));
-
+    JButton backButton = new JButton("Back");
     waitTimePage(int estWaitTime) {
     	//title properties
     	asuImage3.setBounds(0, 0, 175, 75);
@@ -35,6 +35,11 @@ public class waitTimePage extends cartPage implements ActionListener{
         statusLabel.setForeground(Color.RED);
         statusLabel.setBounds(125, 150, 350, 30);
          
+        backButton.setBounds(50,300,100,50);
+        backButton.setBackground(SunDevilBlack);
+        backButton.setForeground(Color.WHITE);
+        backButton.addActionListener(this);
+
         waitTimeLabel.setText("Estimated wait time is " + estWaitTime + " minutes");
         waitTimeLabel.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
         waitTimeLabel.setForeground(Color.WHITE);
@@ -56,7 +61,19 @@ public class waitTimePage extends cartPage implements ActionListener{
         waitTimePage.add(titleLabel);
         waitTimePage.add(asuImage3);
         waitTimePage.add(statusLabel);
+        waitTimePage.add(backButton);
         //ensure contents stay in their fixed position 
         waitTimePage.getContentPane().setLayout(null);
+
+
+    }
+
+    @Override
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+            if (e.getSource() == backButton){
+                System.out.println("back button pressed");
+                homePage secondHomePage = new homePage();
+                this.dispose();
+        }
     }
 }

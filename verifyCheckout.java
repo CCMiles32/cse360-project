@@ -11,13 +11,13 @@ import javax.swing.JTextField;
 //import 
 
 public class verifyCheckout extends cartPage implements ActionListener{
-
+    
 	//initializing variables
     static JFrame verifyCheckout = new JFrame();
     JButton enterButton = new JButton();
     JLabel IDTitle = new JLabel();
     JLabel asuID = new JLabel("ASU ID");
-    //JLabel reminder = new JLabel("Click textfield to clear contents");
+    JLabel reminder = new JLabel("Click textfield to clear contents");
     JTextField studentIDTextBox;
     String order; 
     int EWT = 0;

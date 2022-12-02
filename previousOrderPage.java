@@ -43,14 +43,14 @@ public class previousOrderPage extends orderProcessingPage implements ActionList
         orderID.setBorder(blackBrdr);
         orderID.setBounds(100, 160, 500, 30);
 
-        orderItself.setText("Order:   Cheese with Mushrooms");
+        orderItself.setText("Order:   Cheese with Mushrooms and Onion");
         orderItself.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
         orderItself.setBackground(Color.WHITE);
         orderItself.setOpaque(true);
         orderItself.setBorder(blackBrdr);
         orderItself.setBounds(100, 220, 500, 30);
 
-        orderDate.setText("Date:     " + month + " " + day + ", " + year);
+        orderDate.setText("Date:     " + "12" + " " + "2" + " " + "2022");
         orderDate.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
         orderDate.setBackground(Color.WHITE);
         orderDate.setOpaque(true);

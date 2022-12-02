@@ -121,7 +121,7 @@ public class cartPage extends homePage implements ActionListener{
             if(e.getSource() == checkoutButton){
                 //carry over estimated wait time
                 verifyCheckout newVerify = new verifyCheckout(EWT, totalAmount);
-                cartPage.dispose();
+                //cartPage.dispose();
                 this.dispose();
             }  
         }
