@@ -5,16 +5,16 @@ import java.awt.Image;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class waitTimePage extends cartPage implements ActionListener{
+public class cookTimePage extends cartPage implements ActionListener{
 	//initializing variables
-    static JFrame waitTimePage = new JFrame();
+    static JFrame cookTimePage = new JFrame();
     JLabel acceptedOrderLabel = new JLabel();
     JLabel waitTimeLabel = new JLabel();
     JLabel titleLabel = new JLabel("Wait Time Page");
-    JLabel statusLabel = new JLabel("Status: PENDING", JLabel.LEFT);
+    JLabel statusLabel = new JLabel("Status: Cooking", JLabel.LEFT);
     JLabel asuImage3 = new JLabel(new ImageIcon(new ImageIcon(getClass().getResource("asu.png")).getImage().getScaledInstance(175, 75, Image.SCALE_DEFAULT)));
     JButton backButton = new JButton("Back");
-    waitTimePage(int estWaitTime) {
+    cookTimePage(int estWaitTime) {
     	//title properties
     	asuImage3.setBounds(0, 0, 175, 75);
     	asuImage3.setBackground(Color.WHITE);
@@ -39,7 +39,7 @@ public class waitTimePage extends cartPage implements ActionListener{
         backButton.setBackground(SunDevilBlack);
         backButton.setForeground(Color.WHITE);
         backButton.addActionListener(this);
-
+        
         waitTimeLabel.setText("Estimated wait time is " + estWaitTime + " minutes");
         waitTimeLabel.setFont(new java.awt.Font("Serif", java.awt.Font.PLAIN, 25));
         waitTimeLabel.setForeground(Color.WHITE);
@@ -49,21 +49,21 @@ public class waitTimePage extends cartPage implements ActionListener{
         waitTimeLabel.setBounds(125, 210, 350, 30);
 
         //setting the scene and adding content to the JFrame
-        waitTimePage.setVisible(true); //makes frame visible
-        waitTimePage.setTitle("Checkout"); //sets title
-        waitTimePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //sets exit to close app
-        waitTimePage.setResizable(false); //makes GUI ajustable
-        waitTimePage.setSize(700,400); //setse starting dimentions
-        waitTimePage.setLocationRelativeTo(null); //When opened, opens in center of screen
-        waitTimePage.getContentPane().setBackground(SunDevilGold);
-        waitTimePage.add(acceptedOrderLabel);
-        waitTimePage.add(waitTimeLabel);
-        waitTimePage.add(titleLabel);
-        waitTimePage.add(asuImage3);
-        waitTimePage.add(statusLabel);
-        waitTimePage.add(backButton);
+        cookTimePage.setVisible(true); //makes frame visible
+        cookTimePage.setTitle("Checkout"); //sets title
+        cookTimePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //sets exit to close app
+        cookTimePage.setResizable(false); //makes GUI ajustable
+        cookTimePage.setSize(700,400); //setse starting dimentions
+        cookTimePage.setLocationRelativeTo(null); //When opened, opens in center of screen
+        cookTimePage.getContentPane().setBackground(SunDevilGold);
+        cookTimePage.add(acceptedOrderLabel);
+        cookTimePage.add(waitTimeLabel);
+        cookTimePage.add(titleLabel);
+        cookTimePage.add(asuImage3);
+        cookTimePage.add(statusLabel);
+        cookTimePage.add(backButton);
         //ensure contents stay in their fixed position 
-        waitTimePage.getContentPane().setLayout(null);
+        cookTimePage.getContentPane().setLayout(null);
 
 
     }
@@ -73,9 +73,10 @@ public class waitTimePage extends cartPage implements ActionListener{
             if (e.getSource() == backButton){
                 System.out.println("back button pressed");
                 
-                waitTimePage.dispose();
+                cookTimePage.dispose();
 
-                homePage secondHomePage = new homePage();
+                // go second
+            chefStartCooking pizzadone = new chefStartCooking();
                 
                 System.out.println("page disposed 1");
         }

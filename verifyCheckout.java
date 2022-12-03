@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 public class verifyCheckout extends cartPage implements ActionListener{
     
 	//initializing variables
+    
     static JFrame verifyCheckout = new JFrame();
     JButton enterButton = new JButton();
     JLabel IDTitle = new JLabel();
@@ -24,6 +25,7 @@ public class verifyCheckout extends cartPage implements ActionListener{
     double totalAmount = 0;
     
     verifyCheckout(int estWaitTime, double total) {
+        
     	//initializing and declaring variables
     	EWT = estWaitTime;
     	totalAmount = total; 
@@ -99,10 +101,13 @@ public class verifyCheckout extends cartPage implements ActionListener{
             else
             {
             	System.out.println("ASU ID: " + studentIDTextBox.getText());
-            	waitTimePage newWaitTime = new waitTimePage(EWT);
+            	
                 verifyCheckout.dispose();
                 cartPage.dispose();
                 this.dispose();
+                
+                waitTimePage newWaitTime = new waitTimePage(EWT);
+                
             }
         }
     }
